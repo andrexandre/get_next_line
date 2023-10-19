@@ -6,11 +6,37 @@
 /*   By: analexan <analexan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:44:07 by analexan          #+#    #+#             */
-/*   Updated: 2023/05/22 18:12:49 by analexan         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:18:33 by analexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
+
+size_t	gnl_strlen(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] && s[i] != '\n')
+		i++;
+	return (i + (s[i] == '\n'));
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int	i;
+	char			*ptr;
+
+	i = 0;
+	ptr = (char *)s;
+	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+}
 
 char	*ft_strjoin_gnl(char *s1, char *s2)
 {
@@ -18,7 +44,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	int		j;
 	char	*str;
 
-	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	str = (char *)malloc(gnl_strlen(s1) + gnl_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
 	i = -1;
