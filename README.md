@@ -1,6 +1,6 @@
-# get_next_line
+# Get_next_line
 
-A C function that reads a line from a file descriptor. This project is part of the 42 School curriculum and focuses on handling file I/O efficiently. When called in a loop, it will allow reading a file line by line until the end.
+A C function that reads a line from a file descriptor. This project focuses on handling file I/O efficiently, when called in a loop, it will allow reading a file line by line until the end
 
 ## Usage
 
@@ -46,3 +46,6 @@ For the bonus function
 cc -o main main.c get_next_line_bonus.c
 ```
 > The bonus implements handling multiple file descriptors simultaneously without losing the reading thread of each file descriptor
+
+> [!NOTE]
+> This project is part of the 42 School curriculum
